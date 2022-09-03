@@ -1,5 +1,7 @@
-//Crearemos una clase para trabajar con la creación de un servidor y express
+//Crearemos una clase para trabajar con la creación de un servidor con express y cors
 const express = require('express');
+const cors = require('cors');
+
 
 class Server { 
 
@@ -15,6 +17,9 @@ class Server {
     }
 
     middlewares(){
+        //cors
+        this.app.use(cors());
+
         //directorio publico
         this.app.use(express.static('public'));//elegimos la carepta public como ruta por deefecto
     }
@@ -26,12 +31,12 @@ class Server {
             });
           });
         this.app.put('/api', (req, res)=> {
-            res.json({
+            res.status(400).json({
                 "msg":"put api"
             });
           });
         this.app.post('/api', (req, res)=> {
-            res.json({
+            res.status(201).json({
                 "msg":"post api"
             });
           });
