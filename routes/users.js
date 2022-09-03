@@ -5,11 +5,11 @@ const router = Router();//Esta función nos permite manejar las rutas desde este
 
 router.get('/', usersGet); //Referenciamos la función 
 
-router.put('/', userPut);
+router.put('/:id', userPut);
 
 router.post('/',userPost);
 
-router.delete ('/',userDelete );
+router.delete ('/:id',userDelete );
 
 router.patch ('/', userPatch);
 
