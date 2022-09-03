@@ -1,6 +1,6 @@
 {
   "name": "rest_server",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "crearemos un rest server",
   "main": "index.js",
   "scripts": {
