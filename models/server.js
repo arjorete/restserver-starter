@@ -7,11 +7,20 @@ class Server {
          this.app = express();
         this.port = process.env.PORT;
 
+        //Middlewares
+        this.middlewares();
+        //Rutas e mi aplicación
          this.routes();//llamamos el método que nos creara las rutas de acceso
+
+    }
+
+    middlewares(){
+        //directorio publico
+        this.app.use(express.static('public'));//elegimos la carepta public como ruta por deefecto
     }
 
     routes(){
-        this.app.get('/', (req, res)=> {
+        this.app.get('/api', (req, res)=> {
             res.send('Hello World')
           });
     }
